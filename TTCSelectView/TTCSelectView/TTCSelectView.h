@@ -35,11 +35,11 @@ typedef NS_ENUM(NSInteger, TTCSelectViewStyle) {
 @end
 @protocol TTCSelectViewDataSource <NSObject>
 @required
-- (NSInteger)selectView:(TTCSelectView *)selectView numberOfSectionsInTableView:(TTCBaseTableView *)tableView;
 - (NSInteger)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView numberOfRowsInSection:(NSInteger)section;
-- (NSString *)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView titleForHeaderInSection:(NSInteger)section;
 - (TTCBaseTableViewCell *)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 @optional
+- (NSInteger)selectView:(TTCSelectView *)selectView numberOfSectionsInTableView:(TTCBaseTableView *)tableView;
+- (NSString *)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView titleForHeaderInSection:(NSInteger)section;
 
 
 

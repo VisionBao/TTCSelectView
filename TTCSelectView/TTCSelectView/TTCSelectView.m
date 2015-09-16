@@ -144,21 +144,32 @@
 }
 #pragma mark - tableView delegate
 - (NSInteger)numberOfSectionsInTableView:(TTCBaseTableView *)tableView{
-    return [_dataSource selectView:self numberOfSectionsInTableView:tableView];
+    
+    if (_dataSource && [_dataSource respondsToSelector:@selector(selectView:numberOfSectionsInTableView:)]) {
+        return [_dataSource selectView:self numberOfSectionsInTableView:tableView];
+    }
+    return 1;
 }
 - (NSInteger)tableView:(TTCBaseTableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_dataSource selectView:self tableView:tableView numberOfRowsInSection:section];
 }
 - (NSString *)tableView:(TTCBaseTableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
-    return [_dataSource selectView:self tableView:tableView titleForHeaderInSection:section];
+    if (_dataSource && [_dataSource respondsToSelector:@selector(selectView:tableView:titleForHeaderInSection:)]) {
+        return [_dataSource selectView:self tableView:tableView titleForHeaderInSection:section];
+    }
+    return nil;
 }
 - (TTCBaseTableViewCell *)tableView:(TTCBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     return [_dataSource selectView:self tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 - (CGFloat)tableView:(TTCBaseTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [_delegate selectView:self tableView:tableView heightForRowAtIndexPath:indexPath];
+    if (_delegate && [_delegate respondsToSelector:@selector(selectView:tableView:heightForRowAtIndexPath:)]) {
+        
+        return [_delegate selectView:self tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    return 44;
+    
 }
 - (void)tableView:(TTCBaseTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView.level == 1) {
