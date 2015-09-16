@@ -44,6 +44,7 @@
     [textLayer setFont:@"ArialMT"];
     [textLayer setFontSize:size];
     [textLayer setFrame:frame];
+    [textLayer setContentsScale:2];
     [textLayer setAlignmentMode:kCAAlignmentCenter];
     [textLayer setContentsScale:[[UIScreen mainScreen] scale]];
     [textLayer setForegroundColor:[UIColor blackColor].CGColor];
