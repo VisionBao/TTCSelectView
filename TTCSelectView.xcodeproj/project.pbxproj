@@ -14,13 +14,13 @@
 		A2ABC2111BA96682008F19C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2ABC2101BA96682008F19C7 /* Images.xcassets */; };
 		A2ABC2141BA96682008F19C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2ABC2121BA96682008F19C7 /* LaunchScreen.xib */; };
 		A2ABC2201BA96682008F19C7 /* TTCSelectViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC21F1BA96682008F19C7 /* TTCSelectViewTests.m */; };
-		A2ABC23F1BA96759008F19C7 /* TTCBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC22F1BA96759008F19C7 /* TTCBaseTableView.m */; };
-		A2ABC2401BA96759008F19C7 /* TTCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC2311BA96759008F19C7 /* TTCBaseTableViewCell.m */; };
-		A2ABC2411BA96759008F19C7 /* TTCBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC2331BA96759008F19C7 /* TTCBaseView.m */; };
 		A2ABC2421BA96759008F19C7 /* UIView+ITTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC2361BA96759008F19C7 /* UIView+ITTAdditions.m */; };
 		A2ABC2431BA96759008F19C7 /* TTCMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC2391BA96759008F19C7 /* TTCMoveView.m */; };
-		A2ABC2441BA96759008F19C7 /* TTCSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC23C1BA96759008F19C7 /* TTCSelectView.m */; };
-		A2ABC2451BA96759008F19C7 /* TTCTableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC23E1BA96759008F19C7 /* TTCTableViewIndexBar.m */; };
+		A2ABC2521BAA4EBA008F19C7 /* TTCBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC2491BAA4EBA008F19C7 /* TTCBaseTableView.m */; };
+		A2ABC2531BAA4EBA008F19C7 /* TTCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC24B1BAA4EBA008F19C7 /* TTCBaseTableViewCell.m */; };
+		A2ABC2541BAA4EBA008F19C7 /* TTCBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC24D1BAA4EBA008F19C7 /* TTCBaseView.m */; };
+		A2ABC2551BAA4EBA008F19C7 /* TTCSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC24F1BAA4EBA008F19C7 /* TTCSelectView.m */; };
+		A2ABC2561BAA4EBA008F19C7 /* TTCTableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC2511BAA4EBA008F19C7 /* TTCTableViewIndexBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,20 +47,20 @@
 		A2ABC2191BA96682008F19C7 /* TTCSelectViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTCSelectViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2ABC21E1BA96682008F19C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2ABC21F1BA96682008F19C7 /* TTCSelectViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTCSelectViewTests.m; sourceTree = "<group>"; };
-		A2ABC22E1BA96759008F19C7 /* TTCBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCBaseTableView.h; sourceTree = "<group>"; };
-		A2ABC22F1BA96759008F19C7 /* TTCBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCBaseTableView.m; sourceTree = "<group>"; };
-		A2ABC2301BA96759008F19C7 /* TTCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCBaseTableViewCell.h; sourceTree = "<group>"; };
-		A2ABC2311BA96759008F19C7 /* TTCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCBaseTableViewCell.m; sourceTree = "<group>"; };
-		A2ABC2321BA96759008F19C7 /* TTCBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCBaseView.h; sourceTree = "<group>"; };
-		A2ABC2331BA96759008F19C7 /* TTCBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCBaseView.m; sourceTree = "<group>"; };
 		A2ABC2351BA96759008F19C7 /* UIView+ITTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ITTAdditions.h"; sourceTree = "<group>"; };
 		A2ABC2361BA96759008F19C7 /* UIView+ITTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ITTAdditions.m"; sourceTree = "<group>"; };
 		A2ABC2381BA96759008F19C7 /* TTCMoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCMoveView.h; sourceTree = "<group>"; };
 		A2ABC2391BA96759008F19C7 /* TTCMoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCMoveView.m; sourceTree = "<group>"; };
-		A2ABC23B1BA96759008F19C7 /* TTCSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCSelectView.h; sourceTree = "<group>"; };
-		A2ABC23C1BA96759008F19C7 /* TTCSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSelectView.m; sourceTree = "<group>"; };
-		A2ABC23D1BA96759008F19C7 /* TTCTableViewIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCTableViewIndexBar.h; sourceTree = "<group>"; };
-		A2ABC23E1BA96759008F19C7 /* TTCTableViewIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCTableViewIndexBar.m; sourceTree = "<group>"; };
+		A2ABC2481BAA4EBA008F19C7 /* TTCBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCBaseTableView.h; sourceTree = "<group>"; };
+		A2ABC2491BAA4EBA008F19C7 /* TTCBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCBaseTableView.m; sourceTree = "<group>"; };
+		A2ABC24A1BAA4EBA008F19C7 /* TTCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCBaseTableViewCell.h; sourceTree = "<group>"; };
+		A2ABC24B1BAA4EBA008F19C7 /* TTCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCBaseTableViewCell.m; sourceTree = "<group>"; };
+		A2ABC24C1BAA4EBA008F19C7 /* TTCBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCBaseView.h; sourceTree = "<group>"; };
+		A2ABC24D1BAA4EBA008F19C7 /* TTCBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCBaseView.m; sourceTree = "<group>"; };
+		A2ABC24E1BAA4EBA008F19C7 /* TTCSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCSelectView.h; sourceTree = "<group>"; };
+		A2ABC24F1BAA4EBA008F19C7 /* TTCSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSelectView.m; sourceTree = "<group>"; };
+		A2ABC2501BAA4EBA008F19C7 /* TTCTableViewIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCTableViewIndexBar.h; sourceTree = "<group>"; };
+		A2ABC2511BAA4EBA008F19C7 /* TTCTableViewIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCTableViewIndexBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +107,9 @@
 				A2ABC20A1BA96682008F19C7 /* ViewController.h */,
 				A2ABC20B1BA96682008F19C7 /* ViewController.m */,
 				A2ABC20D1BA96682008F19C7 /* Main.storyboard */,
-				A2ABC22D1BA96759008F19C7 /* Base */,
+				A2ABC2461BAA4EBA008F19C7 /* TTCSelectView */,
 				A2ABC2341BA96759008F19C7 /* Category */,
 				A2ABC2371BA96759008F19C7 /* TTCMoveView */,
-				A2ABC23A1BA96759008F19C7 /* TTCSelectView */,
 				A2ABC2101BA96682008F19C7 /* Images.xcassets */,
 				A2ABC2121BA96682008F19C7 /* LaunchScreen.xib */,
 				A2ABC2031BA96682008F19C7 /* Supporting Files */,
@@ -144,19 +143,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A2ABC22D1BA96759008F19C7 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				A2ABC22E1BA96759008F19C7 /* TTCBaseTableView.h */,
-				A2ABC22F1BA96759008F19C7 /* TTCBaseTableView.m */,
-				A2ABC2301BA96759008F19C7 /* TTCBaseTableViewCell.h */,
-				A2ABC2311BA96759008F19C7 /* TTCBaseTableViewCell.m */,
-				A2ABC2321BA96759008F19C7 /* TTCBaseView.h */,
-				A2ABC2331BA96759008F19C7 /* TTCBaseView.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		A2ABC2341BA96759008F19C7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,15 +161,29 @@
 			path = TTCMoveView;
 			sourceTree = "<group>";
 		};
-		A2ABC23A1BA96759008F19C7 /* TTCSelectView */ = {
+		A2ABC2461BAA4EBA008F19C7 /* TTCSelectView */ = {
 			isa = PBXGroup;
 			children = (
-				A2ABC23B1BA96759008F19C7 /* TTCSelectView.h */,
-				A2ABC23C1BA96759008F19C7 /* TTCSelectView.m */,
-				A2ABC23D1BA96759008F19C7 /* TTCTableViewIndexBar.h */,
-				A2ABC23E1BA96759008F19C7 /* TTCTableViewIndexBar.m */,
+				A2ABC2471BAA4EBA008F19C7 /* Base */,
+				A2ABC24E1BAA4EBA008F19C7 /* TTCSelectView.h */,
+				A2ABC24F1BAA4EBA008F19C7 /* TTCSelectView.m */,
+				A2ABC2501BAA4EBA008F19C7 /* TTCTableViewIndexBar.h */,
+				A2ABC2511BAA4EBA008F19C7 /* TTCTableViewIndexBar.m */,
 			);
 			path = TTCSelectView;
+			sourceTree = "<group>";
+		};
+		A2ABC2471BAA4EBA008F19C7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A2ABC2481BAA4EBA008F19C7 /* TTCBaseTableView.h */,
+				A2ABC2491BAA4EBA008F19C7 /* TTCBaseTableView.m */,
+				A2ABC24A1BAA4EBA008F19C7 /* TTCBaseTableViewCell.h */,
+				A2ABC24B1BAA4EBA008F19C7 /* TTCBaseTableViewCell.m */,
+				A2ABC24C1BAA4EBA008F19C7 /* TTCBaseView.h */,
+				A2ABC24D1BAA4EBA008F19C7 /* TTCBaseView.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,16 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2ABC2401BA96759008F19C7 /* TTCBaseTableViewCell.m in Sources */,
 				A2ABC20C1BA96682008F19C7 /* ViewController.m in Sources */,
+				A2ABC2541BAA4EBA008F19C7 /* TTCBaseView.m in Sources */,
 				A2ABC2091BA96682008F19C7 /* AppDelegate.m in Sources */,
-				A2ABC23F1BA96759008F19C7 /* TTCBaseTableView.m in Sources */,
+				A2ABC2521BAA4EBA008F19C7 /* TTCBaseTableView.m in Sources */,
 				A2ABC2061BA96682008F19C7 /* main.m in Sources */,
 				A2ABC2431BA96759008F19C7 /* TTCMoveView.m in Sources */,
-				A2ABC2451BA96759008F19C7 /* TTCTableViewIndexBar.m in Sources */,
+				A2ABC2561BAA4EBA008F19C7 /* TTCTableViewIndexBar.m in Sources */,
+				A2ABC2531BAA4EBA008F19C7 /* TTCBaseTableViewCell.m in Sources */,
+				A2ABC2551BAA4EBA008F19C7 /* TTCSelectView.m in Sources */,
 				A2ABC2421BA96759008F19C7 /* UIView+ITTAdditions.m in Sources */,
-				A2ABC2441BA96759008F19C7 /* TTCSelectView.m in Sources */,
-				A2ABC2411BA96759008F19C7 /* TTCBaseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +492,7 @@
 				A2ABC2251BA96682008F19C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2ABC2261BA96682008F19C7 /* Build configuration list for PBXNativeTarget "TTCSelectViewTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +501,7 @@
 				A2ABC2281BA96682008F19C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
