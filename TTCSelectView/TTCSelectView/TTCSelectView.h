@@ -26,12 +26,18 @@ typedef NS_ENUM(NSInteger, TTCSelectViewStyle) {
 
 + (TTCSelectView *)tTCSelectViewWithFrame:(CGRect)frame indexArray:(NSArray *)indexArray style:(TTCSelectViewStyle)style;
 
+- (void)reloadTableViewWithLevel:(NSInteger)level;
+
+- (void)reloadAllTableView;
+
 @end
 @protocol TTCSelectViewDelegate <NSObject>
 
 @optional
 - (void)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UIView *)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView viewForHeaderInSection:(NSInteger)section;
+- (CGFloat)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView heightForHeaderInSection:(NSInteger)section;
 @end
 @protocol TTCSelectViewDataSource <NSObject>
 @required

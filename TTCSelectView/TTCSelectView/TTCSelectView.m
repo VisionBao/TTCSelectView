@@ -17,7 +17,7 @@
 @interface TTCSelectView()<TTCTableViewIndexBarDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, assign) BOOL move;
-@property (nonatomic, assign) BOOL animated;
+
 @property (nonatomic, assign)TTCSelectViewStyle TTCSelectMode;
 @property (nonatomic, strong)TTCTableViewIndexBar *indexBar;
 
@@ -32,7 +32,6 @@
 
 + (TTCSelectView *)tTCSelectViewWithFrame:(CGRect)frame indexArray:(NSArray *)indexArray style:(TTCSelectViewStyle)style{
     TTCSelectView *newView = [[TTCSelectView alloc]initWithFrame:frame];
-    newView.animated = NO;
     if (style == TTCSelectViewStyleCity) {
         newView.move = NO;
         [newView initTableViewWithLevel:2];
@@ -54,15 +53,10 @@
 #pragma mark - UI
 - (void)initTableViewWithLevel:(NSInteger)level{
     
-    UISwipeGestureRecognizer *swipeGessture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(tableViewPan:)];
-    
-    
-    
     _tableViewLevel1 = [[TTCBaseTableView alloc]initWithFrame:CGRectMake(0, 0, self.width - TTCSELETVIEW_LEFT_BLANK - TTCTABLEVIEWINDEXBAR_WIDTH, self.height) style:UITableViewStylePlain];
     _tableViewLevel1.delegate = self;
     _tableViewLevel1.dataSource = self;
     _tableViewLevel1.level = 1;
-    [_tableViewLevel1 addGestureRecognizer:swipeGessture];
     [self addSubview:_tableViewLevel1];
     
     _tableViewLevel2 = [[TTCBaseTableView alloc]initWithFrame:CGRectMake(_tableViewLevel1.right + TTCTABLEVIEWINDEXBAR_WIDTH, 0, TTCSELETVIEW_LEFT_BLANK, self.height) style:UITableViewStylePlain];
@@ -78,7 +72,7 @@
         _tableViewLevel3.level = 3;
         [self addSubview:_tableViewLevel3];
     }
-
+    
 }
 - (void)initTableViewIndexBarWithIndexArray:(NSArray *)arr{
     _indexBar = [TTCTableViewIndexBar tTCTableViewIndexBarWithLetterArray:arr frame:CGRectMake(_tableViewLevel1.right, 0, TTCTABLEVIEWINDEXBAR_WIDTH, self.height)];
@@ -99,7 +93,7 @@
     CGPoint location = [recognizer locationInView:self.superview];
     CGFloat x = location.x;
     _indexBar.centerX = x;
-
+    
     if (_indexBar.right >= self.right) {
         _indexBar.left = self.right - TTCTABLEVIEWINDEXBAR_WIDTH;
     }
@@ -118,17 +112,7 @@
     } else if (state == UIGestureRecognizerStateChanged) {
         [self refreshLocation];
     }
-
-}
--(void)tableViewPan:(UISwipeGestureRecognizer *)recognizer{
-//    CGPoint location = [recognizer locationInView:self.superview];
-//    CGFloat x = location.x;
-//    CGPoint translatedPoint = [recognizer translationInView:self.superview];
-//    if (translatedPoint.x<0) {
-//        NSLog(@"<0");
-//    } else {
-//        NSLog(@">0");
-//    }
+    
 }
 - (void)refreshLocation{
     _tableViewLevel2.left = _indexBar.right;
@@ -139,7 +123,7 @@
         _indexBar.right = self.width - TTCSELETVIEW_LEFT_BLANK;
         [self refreshLocation];
     } completion:^(BOOL finished) {
-        _animated = YES;
+        
     }];
 }
 - (void)hide{
@@ -147,15 +131,15 @@
         _indexBar.left = TTCSELETVIEW_LEFT_BLANK/ 2;
         [self refreshLocation];
     } completion:^(BOOL finished) {
-        _animated = NO;
+        
     }];
 }
 #pragma mark - indexBar delegate
 - (void)tableViewIndexBar:(TTCTableViewIndexBar *)indexBar didSelectSectionAtIndex:(NSInteger)index{
     if ([_tableViewLevel1 numberOfSections] > index && index > -1){
         [_tableViewLevel1 scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index]
-                              atScrollPosition:UITableViewScrollPositionTop
-                                      animated:YES];
+                                atScrollPosition:UITableViewScrollPositionTop
+                                        animated:YES];
     }
 }
 #pragma mark - tableView delegate
@@ -176,7 +160,7 @@
     return nil;
 }
 - (TTCBaseTableViewCell *)tableView:(TTCBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     return [_dataSource selectView:self tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 - (CGFloat)tableView:(TTCBaseTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -197,14 +181,43 @@
     if (_delegate && [_delegate respondsToSelector:@selector(selectView:tableView:didSelectRowAtIndexPath:)]) {
         [_delegate selectView:self tableView:tableView didSelectRowAtIndexPath:indexPath];
     }
-
+    
+}
+- (CGFloat)tableView:(TTCBaseTableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (_delegate && [_delegate respondsToSelector:@selector(selectView:tableView:heightForHeaderInSection:)]) {
+        return [_delegate selectView:self tableView:tableView heightForHeaderInSection:section];
+    }
+    return 25;
+}
+- (UIView *)tableView:(TTCBaseTableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (_delegate && [_delegate respondsToSelector:@selector(selectView:tableView:viewForHeaderInSection:)]) {
+      return [_delegate selectView:self tableView:tableView viewForHeaderInSection:section];
+    }
+    return tableView.tableHeaderView;
+}
+- (void)reloadTableViewWithLevel:(NSInteger)level
+{
+    if (_tableViewLevel1.level == level) {
+        [_tableViewLevel1 reloadData];
+    }
+    if (_tableViewLevel2.level == level) {
+        [_tableViewLevel2 reloadData];
+    }
+    if (_tableViewLevel3.level == level) {
+        [_tableViewLevel3 reloadData];
+    }
+}
+- (void)reloadAllTableView{
+    [_tableViewLevel1 reloadData];
+    [_tableViewLevel2 reloadData];
+    [_tableViewLevel3 reloadData];
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

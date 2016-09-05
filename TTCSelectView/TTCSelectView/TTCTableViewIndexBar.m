@@ -18,6 +18,7 @@
 
 + (TTCTableViewIndexBar *)tTCTableViewIndexBarWithLetterArray:(NSArray *)letterArr frame:(CGRect)frame{
     TTCTableViewIndexBar *bar = [[TTCTableViewIndexBar alloc]initWithFrame:frame];
+    bar.backgroundColor = [UIColor whiteColor];
     bar.letterArr = letterArr;
     [bar initItem];
     return bar;
