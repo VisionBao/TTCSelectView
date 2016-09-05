@@ -17,7 +17,7 @@
 @interface TTCSelectView()<TTCTableViewIndexBarDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, assign) BOOL move;
-
+@property (nonatomic, assign) BOOL animated;
 @property (nonatomic, assign)TTCSelectViewStyle TTCSelectMode;
 @property (nonatomic, strong)TTCTableViewIndexBar *indexBar;
 
@@ -32,6 +32,7 @@
 
 + (TTCSelectView *)tTCSelectViewWithFrame:(CGRect)frame indexArray:(NSArray *)indexArray style:(TTCSelectViewStyle)style{
     TTCSelectView *newView = [[TTCSelectView alloc]initWithFrame:frame];
+    newView.animated = NO;
     if (style == TTCSelectViewStyleCity) {
         newView.move = NO;
         [newView initTableViewWithLevel:2];
@@ -52,12 +53,17 @@
 
 #pragma mark - UI
 - (void)initTableViewWithLevel:(NSInteger)level{
-
+    
+    UISwipeGestureRecognizer *swipeGessture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(tableViewPan:)];
+    
+    
+    
     _tableViewLevel1 = [[TTCBaseTableView alloc]initWithFrame:CGRectMake(0, 0, self.width - TTCSELETVIEW_LEFT_BLANK - TTCTABLEVIEWINDEXBAR_WIDTH, self.height) style:UITableViewStylePlain];
     _tableViewLevel1.delegate = self;
     _tableViewLevel1.dataSource = self;
     _tableViewLevel1.level = 1;
-       [self addSubview:_tableViewLevel1];
+    [_tableViewLevel1 addGestureRecognizer:swipeGessture];
+    [self addSubview:_tableViewLevel1];
     
     _tableViewLevel2 = [[TTCBaseTableView alloc]initWithFrame:CGRectMake(_tableViewLevel1.right + TTCTABLEVIEWINDEXBAR_WIDTH, 0, TTCSELETVIEW_LEFT_BLANK, self.height) style:UITableViewStylePlain];
     _tableViewLevel2.delegate = self;
@@ -114,6 +120,16 @@
     }
 
 }
+-(void)tableViewPan:(UISwipeGestureRecognizer *)recognizer{
+//    CGPoint location = [recognizer locationInView:self.superview];
+//    CGFloat x = location.x;
+//    CGPoint translatedPoint = [recognizer translationInView:self.superview];
+//    if (translatedPoint.x<0) {
+//        NSLog(@"<0");
+//    } else {
+//        NSLog(@">0");
+//    }
+}
 - (void)refreshLocation{
     _tableViewLevel2.left = _indexBar.right;
     _tableViewLevel3.left = _tableViewLevel2.right;
@@ -123,7 +139,7 @@
         _indexBar.right = self.width - TTCSELETVIEW_LEFT_BLANK;
         [self refreshLocation];
     } completion:^(BOOL finished) {
-        
+        _animated = YES;
     }];
 }
 - (void)hide{
@@ -131,7 +147,7 @@
         _indexBar.left = TTCSELETVIEW_LEFT_BLANK/ 2;
         [self refreshLocation];
     } completion:^(BOOL finished) {
-        
+        _animated = NO;
     }];
 }
 #pragma mark - indexBar delegate

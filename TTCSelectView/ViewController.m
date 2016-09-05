@@ -31,9 +31,15 @@
     [self.view addSubview:newView];
 }
 - (NSInteger)selectView:(TTCSelectView *)selectView numberOfSectionsInTableView:(TTCBaseTableView *)tableView{
+    if (tableView.level == 2) {
+        return 2;
+    }
     return [_letters count];
 }
 - (NSString *)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (tableView.level == 3) {
+        
+    }
     return _letters[section];
 }
 - (NSInteger)selectView:(TTCSelectView *)selectView tableView:(TTCBaseTableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -46,6 +52,7 @@
         cell = [[TTCBaseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.textLabel.text = _letters[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@"1.jpg"];
     return cell;
 }
 
